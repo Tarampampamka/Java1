@@ -1,4 +1,4 @@
-package Progwards.Olga.T;
+package ru.progwards.java1.lessons.repo;
 
 public class Base {
     static String X_EQUALS = "x = ";
