@@ -1,7 +1,35 @@
+package experience;
+
 public class Nothing1 {
     public static void main(String[] args) {
-        System.out.println(textGrade(-1));}
-        static String textGrade(int grade){
+        /*1-я программа
+        int i =0, n = 10;
+        while (i++ < 5)
+            n+=n;
+        System.out.println(n);*/
+
+        /*2-я программа
+        int n=0;
+        for (int i=0; i<5; i++) {
+            n+=i;
+        }
+        System.out.println(n);*/
+
+        /* 4-я программа
+        int k =0;
+
+        for (int i=0; i<5; i++) {
+            int n=0;
+            while (n++ <3) {
+                k++;
+            }
+        }
+        System.out.println(k);*/
+    }
+        //3-я программа
+        // System.out.println(textGrade(-1));}
+
+       /* static String textGrade(int grade){
             String strOut = "";
             if (grade == 0)
             strOut = "не оценено";
@@ -18,6 +46,6 @@ public class Nothing1 {
                 else strOut = "не определено";
 
             return strOut;
-        }
+        }*/
 
 }

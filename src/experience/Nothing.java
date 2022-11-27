@@ -1,3 +1,6 @@
+package experience;
+
+//Берет 2 целых числа (2 и 5), складывает как строки 25.И меняет тип на строку.
 public class Nothing {
     static int addAsStrings(int n1, int n2) {
         /* 1-ый вариант

@@ -15,7 +15,7 @@ public class Divisibility {
         }
     }
 
-    /*public static void main(String[] args) {
-        check(13,0);
-    }*/
+    public static void main(String[] args) {
+        check(13,2);
+    }
 }
