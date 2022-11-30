@@ -10,7 +10,7 @@ public class DigitCheck {
         return result;
     }
 
-    /*public static void main(String[] args) {
+    public static void main(String[] args) {
         System.out.println(containsDigit(1168221312,8));
-    }*/
+    }
 }

@@ -1,0 +1,30 @@
+package ru.progwards.java1.lessons.classes1;
+
+public class Count {
+    int count= 0;
+    public Count(int count){
+        this.count=count;
+    }
+    public int getCount(){
+
+        return count;
+    }
+    public void inc(){
+
+        count=count+1;
+    }
+    public boolean dec(){
+        count=count-1;
+        boolean isOk;
+        if (count<=0) isOk =true;
+        else isOk=false;
+        return isOk;
+    }
+    public static void main(String[] args){
+        Count i=new Count(10);
+        if (i.dec() == true)
+            System.out.println("count равен 0");
+
+    }
+}
+

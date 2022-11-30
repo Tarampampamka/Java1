@@ -31,9 +31,9 @@ public class NumbersRange {
         }
         return Res_sumEven;
     }
-    /*public static void main(String[] args) {
+    public static void main(String[] args) {
         System.out.println(sumNumbers(1,25));
         System.out.println(sumOdd(12,22));
         System.out.println(sumEvenIdx(12,22));
-    }*/
+    }
 }
