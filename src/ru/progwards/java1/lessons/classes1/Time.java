@@ -26,20 +26,18 @@ public class Time {
         int to_Sec = hours*60*60+minutes*60+seconds;
         return to_Sec;
     }
+    //возвращает количество секунд между 2-мя точками времени.(this и time)
+    //При этом результат всегда должен быть положительный
     public int secondsBetween(Time time){
         int v;
-        Time q=new Time(2,28,12);
-        if (q.seconds>seconds)
-            v=q.seconds-seconds;
-        else v=seconds-q.seconds;
+        if (time.hours>hours)
+            v=time.toSeconds()-toSeconds();
+        else v=toSeconds()-time.toSeconds();
         return v;
     }
 
     /*public static void main(String[] args) {
-        Time t=new Time(1,30,21);
-        System.out.println(t.toString());
-        System.out.println(t.toSeconds());
-        System.out.println(t.secondsBetween(t));
-
+        Time t=new Time(5,52,56);
+        System.out.println(t.secondsBetween(new Time(2, 13, 60)));
     }*/
 }
