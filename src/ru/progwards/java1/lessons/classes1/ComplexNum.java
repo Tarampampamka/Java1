@@ -14,14 +14,14 @@ public class ComplexNum {
     //сложение комплексных чисел по формуле:
     //(a + bi) + (c + di) = (a + c) + (b + d)i
     public ComplexNum add(ComplexNum num){
-        int real2=real+ num.real, imag2=imag+ num.real;
+        int real2=real+ num.real, imag2=imag+ num.imag;
         ComplexNum Res = new ComplexNum(real2,imag2);
         return Res;
     }
     //вычитание комплексных чисел по формуле:
     //(a + bi) - (c + di) = (a - c) + (b - d)i
     public ComplexNum sub(ComplexNum num){
-        int real2=real- num.real, imag2=imag- num.real;
+        int real2=real- num.real, imag2=imag- num.imag;
         ComplexNum Res = new ComplexNum(real2,imag2);
         return Res;
     }
@@ -40,10 +40,10 @@ public class ComplexNum {
         return Res;
     }
 
-    /*public static void main(String[] args) {
-        System.out.println(new ComplexNum(1,1).add(new ComplexNum(99,99)).toString());
-        System.out.println(new ComplexNum(99, 99).sub(new ComplexNum(1, 1)).toString());
-        System.out.println(new ComplexNum(1, 1).mul(new ComplexNum(99, 99)).toString());
-        System.out.println(new ComplexNum(1000, 1000).div(new ComplexNum(100, 100)).toString());
-    }*/
+    public static void main(String[] args) {
+        System.out.println(new ComplexNum(1,2).add(new ComplexNum(99,98)).toString());
+        System.out.println(new ComplexNum(99, 98).sub(new ComplexNum(1, 2)).toString());
+        //System.out.println(new ComplexNum(1, 1).mul(new ComplexNum(99, 99)).toString());
+        //System.out.println(new ComplexNum(1000, 1000).div(new ComplexNum(100, 100)).toString());
+    }
 }
