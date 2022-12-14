@@ -1,6 +1,6 @@
 package ru.progwards.java1.lessons.useclasses;
 
-import ru.progwards.java1.lessons.classes1.Count;
+import ru.progwards.java1.lessons.useclasses.Count;
 
 public class CountTest {
     public static void testInc(int count){
