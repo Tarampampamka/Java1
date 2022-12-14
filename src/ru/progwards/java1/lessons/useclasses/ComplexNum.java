@@ -1,9 +1,9 @@
 package ru.progwards.java1.lessons.classes1;
 
-public class ComplexNum1 {
+public class ComplexNum {
     int real, imag;
 
-    public ComplexNum1(int a, int b){
+    public ComplexNum(int a, int b){
         real=a;
         imag=b;
     }
@@ -13,30 +13,30 @@ public class ComplexNum1 {
     }
     //сложение комплексных чисел по формуле:
     //(a + bi) + (c + di) = (a + c) + (b + d)i
-    public ComplexNum1 add(ComplexNum1 num){
+    public ComplexNum add(ComplexNum num){
         int real2=real+ num.real, imag2=imag+ num.imag;
-        ComplexNum1 Res = new ComplexNum1(real2,imag2);
+        ComplexNum Res = new ComplexNum(real2,imag2);
         return Res;
     }
     //вычитание комплексных чисел по формуле:
     //(a + bi) - (c + di) = (a - c) + (b - d)i
-    public ComplexNum1 sub(ComplexNum1 num){
+    public ComplexNum sub(ComplexNum num){
         int real2=real- num.real, imag2=imag- num.imag;
-        ComplexNum1 Res = new ComplexNum1(real2,imag2);
+        ComplexNum Res = new ComplexNum(real2,imag2);
         return Res;
     }
     //умножение комплексных чисел по формуле:
     //(a + bi) * (c + di) = (a*c - b*d) + (b*c + a*d)i
-    public ComplexNum1 mul(ComplexNum1 num){
+    public ComplexNum mul(ComplexNum num){
         int real2=real* num.real-imag* num.imag, imag2=imag* num.real+real* num.imag;
-        ComplexNum1 Res = new ComplexNum1(real2,imag2);
+        ComplexNum Res = new ComplexNum(real2,imag2);
         return Res;
     }
     //деление комплексных чисел по формуле:
     //(a + bi) / (c + di) = (a*c + b*d)/(c*c+d*d) + ((b*c - a*d)/(c*c+d*d))i
-    public ComplexNum1 div(ComplexNum1 num){
+    public ComplexNum div(ComplexNum num){
         int real2=(real* num.real+imag* num.imag)/(num.real* num.real+ num.imag* num.imag), imag2=(imag* num.real-real* num.imag)/(num.real* num.real+ num.imag* num.imag);
-        ComplexNum1 Res = new ComplexNum1(real2,imag2);
+        ComplexNum Res = new ComplexNum(real2,imag2);
         return Res;
     }
 
