@@ -1,8 +1,8 @@
 package ru.progwards.java1.lessons.useclasses;
 
-import ru.progwards.java1.lessons.classes1.ComplexNum;
-import ru.progwards.java1.lessons.classes1.Count;
-import ru.progwards.java1.lessons.classes1.Time;
+import ru.progwards.java1.lessons.useclasses.ComplexNum;
+import ru.progwards.java1.lessons.useclasses.Count;
+import ru.progwards.java1.lessons.useclasses.Time;
 
 public class TimeTest {
     public static void main(String[] args){
