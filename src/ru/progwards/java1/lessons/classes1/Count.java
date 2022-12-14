@@ -7,7 +7,7 @@ public class Count {
     public Count(int count){
         this.count=count;
     }
-    public int getCount(){
+    public int getCount() {
         return count;
     }
     public void inc(){
@@ -15,8 +15,12 @@ public class Count {
         count=count+1;
     }
     public boolean dec(){
-        count--;
-        return count == 0;
+        count--;            //count=count-1;
+        boolean isOk;       //return count == 0;
+        if (count<=0) isOk =true;
+        else isOk=false;
+        return isOk;
+
     }
     public static void main(String[] args) {
         /*Count i = new Count(10);

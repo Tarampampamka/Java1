@@ -40,10 +40,10 @@ public class ComplexNum {
         return Res;
     }
 
-    public static void main(String[] args) {
+    /*public static void main(String[] args) {
         System.out.println(new ComplexNum(1,2).add(new ComplexNum(99,98)).toString());
         System.out.println(new ComplexNum(99, 98).sub(new ComplexNum(1, 2)).toString());
-        //System.out.println(new ComplexNum(1, 1).mul(new ComplexNum(99, 99)).toString());
-        //System.out.println(new ComplexNum(1000, 1000).div(new ComplexNum(100, 100)).toString());
-    }
+        System.out.println(new ComplexNum(1, 1).mul(new ComplexNum(99, 99)).toString());
+        System.out.println(new ComplexNum(1000, 1000).div(new ComplexNum(100, 100)).toString());
+    }*/
 }
