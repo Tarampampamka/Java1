@@ -12,7 +12,7 @@ public class Count {
     }
     public void inc(){
 
-        count=count+1;
+        count++;
     }
     public boolean dec(){
         count--;            //count=count-1;
@@ -23,14 +23,18 @@ public class Count {
 
     }
     public static void main(String[] args) {
-        /*Count i = new Count(10);
-        for (i.getCount(); i.dec()!=true; )
-            continue;
-        System.out.println("count равен 0");*/
-        Count i=new Count(10);
-        if (i.dec() == true)
-            System.out.println("count равен 0");
+        Count i = new Count(10);
+        int a = 0;
+        do {
+            if (i.dec() == false) {
+                //System.out.print(i.getCount() + " ");
+                a++;
+            } else {
+                System.out.print("count равен 0");
+                break;
+            }
+        }
+            while (a < 10) ;
+        }
 
     }
-}
-

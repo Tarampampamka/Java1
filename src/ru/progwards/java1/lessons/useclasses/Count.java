@@ -12,7 +12,7 @@ public class Count {
     }
     public void inc(){
 
-        count=count+1;
+        count++;
     }
     public boolean dec(){
         count--;            //count=count-1;
