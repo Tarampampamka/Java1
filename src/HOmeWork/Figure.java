@@ -8,6 +8,7 @@ class Figure {
     }
 
     public Figure() {
+
         this("фигура");
     }
     public static void main(String[] args) {
