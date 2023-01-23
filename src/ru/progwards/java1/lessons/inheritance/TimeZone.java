@@ -20,7 +20,7 @@ class ZonedTime extends Time {
     TimeZone zone;
     public ZonedTime(int hours, int minutes, int seconds){
         super(hours, minutes, seconds);
-        new TimeZone(0,0);
+        this.zone= new TimeZone(0);
     }
     public ZonedTime(int hours, int minutes, int seconds, TimeZone zone){
         super(hours, minutes, seconds);
@@ -31,17 +31,21 @@ class ZonedTime extends Time {
         return zone;
     }
     @Override
-    public int secondsBetween(ru.progwards.java1.lessons.inheritance.Time time){
+    public int secondsBetween(Time time){
+        int timeShift;
         if (time.getTimeZone() != null) {
-            return this.secondsBetween(time);
+            if (time.hours>hours){
+                timeShift=time.toSeconds()-toSeconds();}
+            else timeShift=toSeconds()-time.toSeconds();
+            return timeShift;
         }
+        else
         return 0;
     }
     public static void main(String[] args){
-        ru.progwards.java1.lessons.inheritance.Time time0=new ru.progwards.java1.lessons.inheritance.Time(12,45,16);
-
-        Time time1=new ZonedTime(12,46,19);
-        System.out.println(time0.secondsBetween(time1));
+        Time time1=new Time(15,41,1);
+        Time time2=new ZonedTime(15,40,1);
+        System.out.println(time1.secondsBetween(time2));
 
     }
 }

@@ -39,8 +39,8 @@ public class Time {
         return null;
     }
 
-    /*public static void main(String[] args) {
+    public static void main(String[] args) {
         Time t=new Time(5,52,56);
-        System.out.println(t.secondsBetween(new Time(2, 13, 60)));
-    }*/
+        System.out.println(t.getTimeZone());
+    }
 }
