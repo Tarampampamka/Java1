@@ -1,4 +1,4 @@
-package arrays1;
+package ru.progwards.java1.lessons.arrays1;
 
 public class ArraySort {
     public static void sort(int[] a){
