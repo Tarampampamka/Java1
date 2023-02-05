@@ -7,9 +7,8 @@ public class Matrix {
     }
     //найти максимальный элемент в строке num
     public int maxInRow(int num){
-        int temp=0;
-        if (m.length!=1) {
-            for (int i = 0; i < m[num].length; i++) {
+        int temp=-2147483648;
+        for (int i = 0; i < m[num].length; i++) {
                 if(m[num][i]<=temp){
                     continue;
                 }
@@ -17,12 +16,11 @@ public class Matrix {
                     temp = m[num][i];
                 }
             }
-        }
         return temp;
     }
     //найти максимальный элемент в колонке num
     public int maxInCol(int num){
-        int res=0;
+        int res=-2147483648;
         for (int i = 0; i < m.length; i++) {
             if (num < m[i].length) {
                 if (m[i][num] <= res) {
@@ -37,7 +35,7 @@ public class Matrix {
     }
     //находит максимальный элемент во всем двумерном массиве
     public int max(){
-        int maxElement=0;
+        int maxElement=-2147483648;
         for (int j = 0;j<m.length;j++){
             if (maxElement<maxInRow(j))
                 maxElement=maxInRow(j);
@@ -69,8 +67,8 @@ public class Matrix {
         }
         return res;
     }
-    /*public static void main(String[] args){
-        int[][] m = {{1,2,3,5}, {25,17,0,7}, {11,12,13,0}};
-        System.out.println(new Matrix(m).transposition());
-    }*/
+    public static void main(String[] args){
+        int[][] m = {{}};
+        System.out.println(new Matrix(m).max());
+    }
 }
