@@ -20,7 +20,7 @@ public class IntArrays {
     public static boolean equals1(int[] a1, int[] a2){
         boolean ok=false;
         int temp1,temp2;
-        if (a1[a1.length]==a2[a2.length]){
+        if (a1.length==a2.length){
             for (int i = 0; i < a1.length - 1; i++) {
                 for(int j=i+1;j<a1.length;j++)
                     if (a1[i] > a1[j]){
@@ -33,7 +33,7 @@ public class IntArrays {
             for (int i = 0; i < a2.length - 1; i++) {
                 for(int j=i+1;j<a2.length;j++)
                     if (a2[i] > a2[j]){
-                        temp2=a1[i];
+                        temp2=a2[i];
                         a2[i] = a2[j];
                         a2[j]=temp2;
                     }
@@ -52,8 +52,8 @@ public class IntArrays {
         return Arrays.equals(a1,a2);
     }
     public static void main(String[] args) {
-        int[] a1 = {2,5,24,78,4,0,1,89,2};
-        int[] a2 = {2,5,24,78,4,0,0,89,2};
-        System.out.println(equals2(a1,a2));
+        int[] a1 = {4,51,24,78,2,0,11,89,2};
+        int[] a2 = {2,24,78,51,4,0,89,2,11};
+        System.out.println(equals1(a1,a2));
     }
 }
