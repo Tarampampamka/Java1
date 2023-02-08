@@ -3,7 +3,7 @@ package ru.progwards.java1.lessons.arrays2;
 import java.util.Arrays;
 
 public class DIntArray {
-    private int[] a1={2,5,24,78,4,0,1,89,2};
+    private int[] a1={};
     public DIntArray() {
     }
     //добавляет элемент num в конец массива, при этом размер массива должен увеличиться на 1
@@ -11,6 +11,7 @@ public class DIntArray {
         int[] newMas= new int[a1.length+1];
         System.arraycopy(a1,0,newMas,0,a1.length);
         newMas[newMas.length-1]=num;
+        a1=newMas;
     }
     //добавляет элемент num в позицию pos массива, при этом размер массива должен увеличиться на 1
     public void atInsert(int pos, int num){
@@ -28,14 +29,23 @@ public class DIntArray {
     //возвращает элемент по индексу pos
     public int at(int pos){
         int res=0;
-        if (pos>0) {
-            for (int i = 0; i <= a1.length-(a1.length-(pos-1)); i++) {
+        for (int i = 0; i <= pos; i++) {
                 res = a1[i];
             }
-        }
         return res;
     }
     public static void main(String[] args) {
-        //System.out.println(at(3));
+        DIntArray q=new DIntArray();
+        q.add(17);//17,30,-15,67,78,63,-51,-80,59,91
+        q.add(30);
+        q.add(-15);
+        q.add(67);
+        q.add(78);
+        q.add(63);
+        q.add(-51);
+        q.add(-80);
+        q.add(59);
+        q.add(91);
+        System.out.println(q.at(5));
     }
 }

@@ -52,8 +52,8 @@ public class IntArrays {
         return Arrays.equals(a1,a2);
     }
     public static void main(String[] args) {
-        int[] a1 = {4,51,24,78,2,0,11,89,2};
-        int[] a2 = {2,24,78,51,4,0,89,2,11};
+        int[] a1 = {4,51,24,78,11,89,2,2,0};
+        int[] a2 = {4,51,24,78,2,0,11,89,2};
         System.out.println(equals1(a1,a2));
     }
 }
