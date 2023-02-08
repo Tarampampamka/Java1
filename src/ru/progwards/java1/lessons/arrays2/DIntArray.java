@@ -30,12 +30,12 @@ public class DIntArray {
     }
     //возвращает элемент по индексу pos
     public int at(int pos){
-        int res=0;
+        int res=-2147483648;
         for (int i = 0; i <= pos; i++) {
                 res = a1[i];
             }
-        return res;
-    }
+            return res;
+        }
     public static void main(String[] args) {
         DIntArray q=new DIntArray();
         q.add(17);//17,30,-15,67,78,63,-51,-80,59,91
@@ -49,9 +49,9 @@ public class DIntArray {
         q.add(59);
         q.add(91);
         System.out.println(q.at(5));
-        //q.atInsert(5,54);
-        //System.out.println(q.at(5));
-        q.atDelete(0);
-        System.out.println(q.at(8));
+        q.atInsert(0,54);
+        System.out.println(q.at(9));
+        //q.atDelete(0);
+        //System.out.println(q.at(0));
     }
 }
