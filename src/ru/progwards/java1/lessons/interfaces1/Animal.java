@@ -60,7 +60,7 @@ public abstract class Animal implements IColor, Comparable<Animal> {
         else d = 2;
         return foodPrice = calculateFoodWeight() * d;
     }
-    public static void main(String[] args){
+    /*public static void main(String[] args){
         Cow C1 = new Cow("Пеструшка");
         Cow C2 = new Cow("Рыжая");
         Cow C3 = new Cow("Рыжая");
@@ -72,6 +72,6 @@ public abstract class Animal implements IColor, Comparable<Animal> {
         C4.weight = 23.5;
         System.out.println(C1.toString());
 
-    }
+    }*/
 }
 

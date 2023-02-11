@@ -10,7 +10,9 @@ class Cow extends Animal {
     public Cow(String name) {
         super(name);
     }
-
+    public Cow(String name,Double weight) {
+        super(name,weight);
+    }
     @Override
     public String kind(){
        return "корова";

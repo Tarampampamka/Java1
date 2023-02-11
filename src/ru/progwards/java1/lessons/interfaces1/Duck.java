@@ -7,6 +7,9 @@ class Duck extends Animal{
     public Duck(String name) {
         super(name);
     }
+    public Duck(String name,Double weight) {
+        super(name,weight);
+    }
 
     @Override
     public String kind(){

@@ -7,6 +7,9 @@ class Hamster extends Animal{
     public Hamster(String name) {
         super(name);
     }
+    public Hamster(String name,Double weight) {
+        super(name,weight);
+    }
 
     @Override
     public String kind(){
