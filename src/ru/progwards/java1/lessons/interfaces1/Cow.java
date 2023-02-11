@@ -5,7 +5,7 @@ import ru.progwards.java1.lessons.interfaces1.Animal;
 import static ru.progwards.java1.lessons.interfaces1.Animal.FoodKind.HAY;
 import static ru.progwards.java1.lessons.interfaces1.IColor.Color.RED;
 
-class Cow extends Animal implements IColor {
+class Cow extends Animal {
 
     public Cow(String name) {
         super(name);

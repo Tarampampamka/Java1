@@ -4,19 +4,23 @@ import ru.progwards.java1.lessons.interfaces1.Cow;
 import ru.progwards.java1.lessons.interfaces1.Hamster;
 import static ru.progwards.java1.lessons.interfaces1.Animal.FoodKind.CORN;
 
-public abstract class Animal implements Comparable<Animal>{
+public abstract class Animal implements IColor, Comparable<Animal> {
     String name;
     Double weight;
     double foodPrice, foodWaight;
     public Animal(String name){
         this.name=name;
     }
+    public Animal(String name,Double weight){
+        this.name=name;
+        this.weight=weight;
+    }
     public abstract String kind();
     public abstract String say();
 
     @Override
     public String toString(){
-        return "Это "+kind()+" "+name;
+        return "Это "+kind()+" "+name+" "+weight+" "+ getColor();
     }
     public void setWeight(double weight){
         this.weight = weight;
@@ -26,8 +30,9 @@ public abstract class Animal implements Comparable<Animal>{
         return weight;
     }
     // сравнивает животных по весу
-    int compareTo(Animal animal){
-        return Double.compare(weight, animal.weight);
+    public int compareTo(Animal animal){
+        //return Double.compare(weight, animal.weight);
+        return weight.compareTo(animal.weight);
     }
     //сравнивает животных по следующим параметрам:имя,тип,вес
     public boolean equals(Object o){
@@ -65,7 +70,7 @@ public abstract class Animal implements Comparable<Animal>{
         C2.weight = 28.23;
         C3.weight = 28.23;
         C4.weight = 23.5;
-        //System.out.println(C4.foodKind);
+        System.out.println(C1.toString());
 
     }
 }

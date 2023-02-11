@@ -3,7 +3,7 @@ package ru.progwards.java1.lessons.interfaces1;
 import static ru.progwards.java1.lessons.interfaces1.Animal.FoodKind.CORN;
 import static ru.progwards.java1.lessons.interfaces1.IColor.Color.GRAY;
 
-class Duck extends Animal implements IColor{
+class Duck extends Animal{
     public Duck(String name) {
         super(name);
     }
