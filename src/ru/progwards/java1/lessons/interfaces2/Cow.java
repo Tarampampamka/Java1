@@ -10,7 +10,7 @@ class Cow extends Animal {
     public Cow(String name) {
         super(name);
     }
-    public Cow(String name, Double weight) {
+    public Cow(String name, double weight) {
         super(name,weight);
     }
     public String getHome(){

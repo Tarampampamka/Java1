@@ -9,7 +9,7 @@ class Hamster extends Animal {
     public Hamster(String name) {
         super(name);
     }
-    public Hamster(String name, Double weight) {
+    public Hamster(String name, double weight) {
         super(name,weight);
     }
     public String getHome(){

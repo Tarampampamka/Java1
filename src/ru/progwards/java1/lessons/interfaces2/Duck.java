@@ -9,7 +9,7 @@ class Duck extends Animal {
     public Duck(String name) {
         super(name);
     }
-    public Duck(String name, Double weight) {
+    public Duck(String name, double weight) {
         super(name,weight);
     }
     public String getHome(){
