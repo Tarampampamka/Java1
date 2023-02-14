@@ -1,7 +1,7 @@
 package ru.progwards.java1.lessons.interfaces2;
 
 public class Car implements CompareWeight{
-    double weight;
+    private double weight;
     public Car(double weight){
         this.weight=weight;
     }
@@ -30,7 +30,7 @@ public class Car implements CompareWeight{
     public static void main(String[] args) {
         Car g=new Car(258.4);
         System.out.println(g.toString());
-        System.out.println(g.compareWeight(new Car(258.4)));
+        System.out.println(g.compareWeight(new Car(28.4)));
 
     }
 }

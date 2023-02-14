@@ -89,7 +89,7 @@ public abstract class Animal implements CompareWeight,ToString,Home,IColor, Comp
         C3.weight = 28.23;
         C4.weight = 23.5;
         Animal [] q= {C1, C2, C4};
-        CompareWeight.sort(q);
+        ArraySort.sort(q);
     }
 }
 
