@@ -1,17 +1,17 @@
-package ru.progwards.java1.lessons.interfaces1;
+package ru.progwards.java1.lessons.interfaces2;
 
-import ru.progwards.java1.lessons.interfaces1.Cow;
-import ru.progwards.java1.lessons.interfaces1.Hamster;
-import static ru.progwards.java1.lessons.interfaces1.Animal.FoodKind.CORN;
+import ru.progwards.java1.lessons.interfaces2.IColor;
 
-public abstract class Animal implements IColor, Comparable<Animal> {
+import static ru.progwards.java1.lessons.interfaces2.Animal.FoodKind.CORN;
+
+public abstract class Animal implements CompareWeight,ToString,Home,IColor, Comparable<Animal> {
     String name;
     Double weight;
     double foodPrice, foodWaight;
     public Animal(String name){
         this.name=name;
     }
-    public Animal(String name,Double weight){
+    public Animal(String name, Double weight){
         this.name=name;
         this.weight=weight;
     }
@@ -28,6 +28,24 @@ public abstract class Animal implements IColor, Comparable<Animal> {
     }
     public double getWeight(){
         return weight;
+    }
+    @Override
+    public String getString() {
+        return toString();
+    }
+    @Override
+    public CompareResult compareWeight(CompareWeight smthHasWeight){
+        CompareResult q=null;
+        if (this.weight<smthHasWeight.getWeight()){
+            q=CompareResult.LESS;
+        };
+        if (this.weight==smthHasWeight.getWeight()){
+            q=CompareResult.EQUAL;
+        };
+        if (this.weight>smthHasWeight.getWeight()){
+            q=CompareResult.GREATER;
+        };
+    return q;
     }
     // сравнивает животных по весу
     public int compareTo(Animal animal){
@@ -60,7 +78,7 @@ public abstract class Animal implements IColor, Comparable<Animal> {
         else d = 2;
         return foodPrice = calculateFoodWeight() * d;
     }
-    /*public static void main(String[] args){
+    public static void main(String[] args){
         Cow C1 = new Cow("Пеструшка");
         Cow C2 = new Cow("Рыжая");
         Cow C3 = new Cow("Рыжая");
@@ -70,8 +88,8 @@ public abstract class Animal implements IColor, Comparable<Animal> {
         C2.weight = 28.23;
         C3.weight = 28.23;
         C4.weight = 23.5;
-        System.out.println(C1.compareTo(C2));
-
-    }*/
+        Animal [] q= {C1, C2, C4};
+        CompareWeight.sort(q);
+    }
 }
 
