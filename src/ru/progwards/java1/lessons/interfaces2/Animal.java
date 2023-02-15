@@ -6,7 +6,7 @@ import static ru.progwards.java1.lessons.interfaces2.Animal.FoodKind.CORN;
 
 public abstract class Animal implements CompareWeight,ToString,Home,IColor, Comparable<Animal> {
     String name;
-    Double weight;
+    Double weight=0.0;
     double foodPrice, foodWaight;
     public Animal(String name){
         this.name=name;
@@ -83,13 +83,13 @@ public abstract class Animal implements CompareWeight,ToString,Home,IColor, Comp
         Cow C2 = new Cow("Рыжая");
         Cow C3 = new Cow("Рыжая");
         Hamster C4 = new Hamster("Пеструшка");
-        //System.out.println(C1);
-        C1.weight = 23.5;
+        System.out.println(C1);
+        //C1.weight = 23.5;
         C2.weight = 28.23;
         C3.weight = 28.23;
         C4.weight = 23.5;
-        Animal [] q= {C1, C2, C4};
-        ArraySort.sort(q);
+        //Animal [] q= {C1, C2, C4};
+        //ArraySort.sort(q);
     }
 }
 
