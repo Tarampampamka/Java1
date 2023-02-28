@@ -39,7 +39,7 @@ class Cow extends Animal {
     public static void main(String[] args) {
         Cow g=new Cow("Пони",258.4);
         System.out.println(g.compareWeight(new Cow("Пеструшка",258.4)));
-
+        System.out.println(g.toString());
     }
 }
 

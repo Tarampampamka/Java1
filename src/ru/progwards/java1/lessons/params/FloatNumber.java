@@ -19,14 +19,18 @@ public class FloatNumber {
 
     int j=0,point=0,tail=0;
     if ((result[0]== '-')||(result[0]== '+')) {
-        for (int i = 1; /*((result[i] != 'E') & (result[i] != 'Е')& (result[i] != 'e')) & */(i < result.length); i++) {
-            if (result[i] == '.') {
-                point = i;
-                continue;
+        for (int i = 1; i < result.length; i++) {
+            if ((result[i] != 'E') & (result[i] != 'Е') & (result[i] != 'e')) {
+                if (result[i] == '.') {
+                    point = i;
+                    continue;
+                } else {
+                    tempStr1 += result[i];
+                    tail = i - point;
+                }
             } else {
-                tempStr1 += result[i];
-                j = i + 2;
-                tail = i - point;
+                j = i + 1;
+                break;
             }
         }
         this.mantissa = Long.parseLong(tempStr1);
@@ -42,14 +46,16 @@ public class FloatNumber {
         }
     }
     else {
-        for (int i = 0; ((result[i] != 'E') & (result[i] != 'Е')& (result[i] != 'e')) & (i < result.length-1); i++) {
-            if (result[i] == '.') {
-                point = i;
-                continue;
-            } else {
-                tempStr1 += result[i];
-                j = i + 2;
-                tail = i - point;
+        for (int i = 1; (i < result.length); i++) {
+            if ((result[i] != 'E') & (result[i] != 'Е')& (result[i] != 'e')) {
+                if (result[i] == '.') {
+                    point = i;
+                    continue;
+                } else {
+                    tempStr1 += result[i];
+                    j = i + 2;
+                    tail = i - point;
+                }
             }
         }
         this.mantissa = Long.parseLong(tempStr1);
@@ -113,7 +119,10 @@ public class FloatNumber {
         System.out.println(q.toString());
         System.out.println(q.toDouble());
         //q.fromDouble(q.toDouble());
-        System.out.println(q.add(new FloatNumber("+3.7E4")));
+        FloatNumber t = new FloatNumber("+3.7E4");
+        System.out.println(t.toDouble());
+        System.out.println(q.add(t));
+        //System.out.println(q.add(new FloatNumber("+3.7E4")));
         //System.out.println(q.sub(new FloatNumber("+3.7E4")));
     }
 }
