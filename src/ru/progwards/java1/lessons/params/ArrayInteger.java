@@ -15,7 +15,6 @@ public class ArrayInteger {
         for (int i = 0; i < strArr.length; i++) {
             digits[i] = Byte.parseByte(strArr[i]);
         }
-        System.out.println(Arrays.toString(digits));
     }
     @Override
     public String toString(){
@@ -27,9 +26,8 @@ public class ArrayInteger {
     // При переполнении вернуть false, при этом само число сбросить в 0
     boolean add(ArrayInteger num) {
         boolean ok = true;
-        //int j = n - 1;
         String out1 = "", out2 = "", outSum = "";
-        int q, w, sum;
+        int sum;
 
         for (int i = 0; i <= num.digits.length - 1; i++){
             out1= out1 + Byte.toString((byte) (num.digits[i]));
@@ -37,24 +35,19 @@ public class ArrayInteger {
         for (int j = 0; j < digits.length; j++){
             out2= out2 + Byte.toString((byte) (digits[j]));
         }
-        q= Integer.parseInt(out1);
-        w= Integer.parseInt(out2);
-        sum = q+w;
-       
+
+        sum = Integer.parseInt(out1)+Integer.parseInt(out2);
+
         outSum = String.valueOf(sum);
 
-        if (num.digits.length != outSum.length()) {
+        if (digits.length < outSum.length()) {
             ok = false;
-            for (int l = 0; l < num.n; l++) {
-                num.digits[l] = 0;
+            for (int l = 0; l < digits.length; l++) {
+                digits[l] = 0;
             }
         } else {
-            String[] strArr = outSum.split("");
-            num.digits = new byte[strArr.length];
-            for (int i = 0; i < strArr.length; i++) {
-                num.digits[i] = Byte.parseByte(strArr[i]);
+            fromString(outSum);
             }
-        }
         return ok;
     }
 
@@ -63,6 +56,6 @@ public class ArrayInteger {
         w.fromString("691");
         ArrayInteger q =new ArrayInteger(2);
         q.fromString("12");
-        w.add(q);
+        System.out.println(w.add(q));
     }
 }
