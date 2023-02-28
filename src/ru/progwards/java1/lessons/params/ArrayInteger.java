@@ -57,5 +57,7 @@ public class ArrayInteger {
         ArrayInteger q =new ArrayInteger(2);
         q.fromString("12");
         System.out.println(w.add(q));
+        System.out.println(w.toString());
+        System.out.println(q);
     }
 }
