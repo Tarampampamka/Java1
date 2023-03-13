@@ -11,7 +11,7 @@ public class FloatNumber {
     }
     FloatNumber(String num){
         char[] result = num.toCharArray();
-        String tempStr1 = "",tempStr2 = "0";
+        String tempStr1 = "",tempStr2 = "";
     if (result[0]== '-'){
         this.sign=false;
     }
@@ -34,11 +34,12 @@ public class FloatNumber {
             }
         }
         this.mantissa = Long.parseLong(tempStr1);
-        if (j < result.length) {
+        if ((j !=0) && (j < result.length)) {
             for (; j < result.length; j++) {
                 tempStr2 += result[j];
             }
         }
+        else tempStr2 = "0";
         this.exp = Integer.parseInt(tempStr2);  //exp=Integer.valueOf(tempStr2);
 
         if (point != 0) {
@@ -46,7 +47,7 @@ public class FloatNumber {
         }
     }
     else {
-        for (int i = 1; (i < result.length); i++) {
+        for (int i = 0; i < result.length; i++) {
             if ((result[i] != 'E') & (result[i] != 'Е')& (result[i] != 'e')) {
                 if (result[i] == '.') {
                     point = i;
@@ -59,11 +60,13 @@ public class FloatNumber {
             }
         }
         this.mantissa = Long.parseLong(tempStr1);
-        if (j < result.length) {
+
+        if ((j !=0) && (j < result.length)) {
             for (; j < result.length; j++) {
                 tempStr2 += result[j];
             }
         }
+        else tempStr2 = "0";
         this.exp = Integer.parseInt(tempStr2);  //exp=Integer.valueOf(tempStr2);
 
         if (point != 0) {
@@ -71,6 +74,7 @@ public class FloatNumber {
         }
     }
     }
+    @Override
     public String toString(){
         String first="",fin;
         int exp2=0;
@@ -89,41 +93,96 @@ public class FloatNumber {
         return d = Double.parseDouble(toString());
     }
     void fromDouble(double num){
-        String str= String.valueOf(num);
+     /*String vr1 = "", vr2 = "";
+        int j=0;
+        if (num < 0) {
+            sign = false;
+        }
+        else {sign = true;}
+        double modulNum = Math.abs(num);
+        String str = Double.toString(modulNum);
+
+        char[] ch = str.toCharArray();
+
+        int point = 0, tail = 0;
+        for (int i=0; i<ch.length; i++){
+            if ((ch[i] != 'E') & (ch[i] != 'Е')){*/
+            /*if ((ch[i] == '.') || (ch[i] == 'E') || (ch[i] == 'Е')){
+                j=i;
+                break;
+            }
+            else {
+                vr1=vr1+ch[i];
+            }*/
+            /*if (ch[i] == '.') {
+                point = i;
+                continue;
+            } else {
+                vr1+=ch[i];
+                tail = i - point;
+            }
+        } else {
+            j = i + 1;
+            break;
+        }
+        }
+        mantissa =Long.parseLong(vr1);*/
+
+        /*if ((ch[j] == '.') || (ch[j] == 'E') || (ch[j] == 'Е')) {
+            for (j = j+1; j < ch.length; j++) {
+            vr2 = vr2 + ch[j];
+            }
+        }
+        if (j == 0) {
+            exp = 0;
+        }*/
+        /*if (j < ch.length) {
+            for (; j < ch.length; j++) {
+                vr2 += ch[j];
+            }
+        }
+        exp = Integer.parseInt(vr2);  //exp=Integer.valueOf(tempStr2);
+
+        if (point != 0) {
+            exp = exp - tail;
+        }
+        exp = Integer.parseInt(vr2);*/
+        String vr = String.valueOf(num);
+        new FloatNumber(vr);
     }
     void negative(){
         if (!sign){
             sign=true;
         }
         else sign=false;
-        mantissa=-mantissa;
-        exp=-exp;
     }
     FloatNumber add(FloatNumber num){
         double a =toDouble()+num.toDouble();
-        System.out.println(a);
         String str= String.valueOf(a);
         return new FloatNumber(str);
     }
     FloatNumber sub(FloatNumber num){
         num.negative();
-        double a =toDouble()+num.toDouble();
-        System.out.println(a);
-        String str= String.valueOf(a);
-        return new FloatNumber(str);
+        return add(num);
     }
     public static void main(String[] args) {
-        FloatNumber q= new FloatNumber("-253.2Е4");
+        FloatNumber q= new FloatNumber("0.000000000000015");
         System.out.println(q.exp);
         System.out.println(q.mantissa);
         System.out.println(q.toString());
         System.out.println(q.toDouble());
         //q.fromDouble(q.toDouble());
         FloatNumber t = new FloatNumber("+3.7E4");
+        System.out.println(t.exp);
+        System.out.println(t.mantissa);
+        System.out.println(t.toString());
         System.out.println(t.toDouble());
+        t.fromDouble(t.toDouble());
+        //q.fromDouble(q.toDouble());
         System.out.println(q.add(t));
-        //System.out.println(q.add(new FloatNumber("+3.7E4")));
-        //System.out.println(q.sub(new FloatNumber("+3.7E4")));
+        System.out.println(q.add(new FloatNumber("3245689846465E4")));
+        System.out.println(q.sub(new FloatNumber("+3.7E4")));
+        //System.out.println(q.exp);
     }
 }
 
