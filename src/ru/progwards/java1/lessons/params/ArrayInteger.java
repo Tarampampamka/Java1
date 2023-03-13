@@ -29,14 +29,14 @@ public class ArrayInteger {
         String out1 = "", out2 = "", outSum = "";
         int sum;
 
-        for (int i = 0; i <= num.digits.length - 1; i++){
-            out1= out1 + Byte.toString((byte) (num.digits[i]));
-        }
-        for (int j = 0; j < digits.length; j++){
-            out2= out2 + Byte.toString((byte) (digits[j]));
-        }
+        for (int i = 0; i <= num.digits.length - 1; i++) {
+                out1 = out1 + Byte.toString((byte) (num.digits[i]));
+            }
 
-        sum = Integer.parseInt(out1)+Integer.parseInt(out2);
+        for (int j = 0; j < digits.length; j++) {
+            out2 = out2 + Byte.toString((byte) (digits[j]));
+        }
+            sum = Integer.parseInt(out1) + Integer.parseInt(out2);
 
         outSum = String.valueOf(sum);
 
@@ -47,13 +47,13 @@ public class ArrayInteger {
             }
         } else {
             fromString(outSum);
-            }
+        }
         return ok;
     }
 
     public static void main(String[] args) {
         ArrayInteger w =new ArrayInteger(3);
-        w.fromString("691");
+        w.fromString("[9,");
         ArrayInteger q =new ArrayInteger(2);
         q.fromString("12");
         System.out.println(w.add(q));
