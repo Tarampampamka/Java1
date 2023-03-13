@@ -68,7 +68,7 @@ public class FloatNumber {
             }
         }
         else tempStr2 = "0";
-        this.exp = Integer.parseInt(tempStr2);  
+        this.exp = Integer.parseInt(tempStr2);
         if (point != 0) {
             exp = exp - tail;
         }
@@ -114,20 +114,20 @@ public class FloatNumber {
     }
     public static void main(String[] args) {
         FloatNumber q= new FloatNumber("-0.00000000000015");
-        /*System.out.println(q.exp);
+        System.out.println(q.exp);
         System.out.println(q.mantissa);
         System.out.println(q.toString());
-        System.out.println(q.toDouble());*/
+        System.out.println(q.toDouble());
         FloatNumber t = new FloatNumber("+3.7E4");
-        /*System.out.println(t.exp);
+        System.out.println(t.exp);
         System.out.println(t.mantissa);
         System.out.println(t.toString());
-        System.out.println(t.toDouble());*/
-        //t.fromDouble(t.toDouble());
+        System.out.println(t.toDouble());
+        t.fromDouble(t.toDouble());
         q.fromDouble(q.toDouble());
-        //System.out.println(q.add(t));
-        //System.out.println(q.add(new FloatNumber("32")));
-        //System.out.println(q.sub(new FloatNumber("+3.7E4")));
+        System.out.println(q.add(t));
+        System.out.println(q.add(new FloatNumber("32")));
+        System.out.println(q.sub(new FloatNumber("+3.7E4")));
     }
 }
 
