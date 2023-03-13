@@ -29,7 +29,7 @@ public class FloatNumber {
                     tail = i - point;
                 }
             } else {
-                j = i + 1;
+                j = i + 2;
                 break;
             }
         }
@@ -40,7 +40,7 @@ public class FloatNumber {
             }
         }
         else tempStr2 = "0";
-        this.exp = Integer.parseInt(tempStr2);  //exp=Integer.valueOf(tempStr2);
+        this.exp = Integer.parseInt(tempStr2);
 
         if (point != 0) {
             exp = exp - tail;
@@ -58,6 +58,7 @@ public class FloatNumber {
                     tail = i - point;
                 }
             }
+            else break;
         }
         this.mantissa = Long.parseLong(tempStr1);
 
@@ -67,8 +68,7 @@ public class FloatNumber {
             }
         }
         else tempStr2 = "0";
-        this.exp = Integer.parseInt(tempStr2);  //exp=Integer.valueOf(tempStr2);
-
+        this.exp = Integer.parseInt(tempStr2);  
         if (point != 0) {
             exp = exp - tail;
         }
@@ -93,60 +93,7 @@ public class FloatNumber {
         return d = Double.parseDouble(toString());
     }
     void fromDouble(double num){
-     /*String vr1 = "", vr2 = "";
-        int j=0;
-        if (num < 0) {
-            sign = false;
-        }
-        else {sign = true;}
-        double modulNum = Math.abs(num);
-        String str = Double.toString(modulNum);
 
-        char[] ch = str.toCharArray();
-
-        int point = 0, tail = 0;
-        for (int i=0; i<ch.length; i++){
-            if ((ch[i] != 'E') & (ch[i] != 'Е')){*/
-            /*if ((ch[i] == '.') || (ch[i] == 'E') || (ch[i] == 'Е')){
-                j=i;
-                break;
-            }
-            else {
-                vr1=vr1+ch[i];
-            }*/
-            /*if (ch[i] == '.') {
-                point = i;
-                continue;
-            } else {
-                vr1+=ch[i];
-                tail = i - point;
-            }
-        } else {
-            j = i + 1;
-            break;
-        }
-        }
-        mantissa =Long.parseLong(vr1);*/
-
-        /*if ((ch[j] == '.') || (ch[j] == 'E') || (ch[j] == 'Е')) {
-            for (j = j+1; j < ch.length; j++) {
-            vr2 = vr2 + ch[j];
-            }
-        }
-        if (j == 0) {
-            exp = 0;
-        }*/
-        /*if (j < ch.length) {
-            for (; j < ch.length; j++) {
-                vr2 += ch[j];
-            }
-        }
-        exp = Integer.parseInt(vr2);  //exp=Integer.valueOf(tempStr2);
-
-        if (point != 0) {
-            exp = exp - tail;
-        }
-        exp = Integer.parseInt(vr2);*/
         String vr = String.valueOf(num);
         new FloatNumber(vr);
     }
@@ -166,23 +113,21 @@ public class FloatNumber {
         return add(num);
     }
     public static void main(String[] args) {
-        FloatNumber q= new FloatNumber("0.000000000000015");
-        System.out.println(q.exp);
+        FloatNumber q= new FloatNumber("-0.00000000000015");
+        /*System.out.println(q.exp);
         System.out.println(q.mantissa);
         System.out.println(q.toString());
-        System.out.println(q.toDouble());
-        //q.fromDouble(q.toDouble());
+        System.out.println(q.toDouble());*/
         FloatNumber t = new FloatNumber("+3.7E4");
-        System.out.println(t.exp);
+        /*System.out.println(t.exp);
         System.out.println(t.mantissa);
         System.out.println(t.toString());
-        System.out.println(t.toDouble());
-        t.fromDouble(t.toDouble());
-        //q.fromDouble(q.toDouble());
-        System.out.println(q.add(t));
-        System.out.println(q.add(new FloatNumber("3245689846465E4")));
-        System.out.println(q.sub(new FloatNumber("+3.7E4")));
-        //System.out.println(q.exp);
+        System.out.println(t.toDouble());*/
+        //t.fromDouble(t.toDouble());
+        q.fromDouble(q.toDouble());
+        //System.out.println(q.add(t));
+        //System.out.println(q.add(new FloatNumber("32")));
+        //System.out.println(q.sub(new FloatNumber("+3.7E4")));
     }
 }
 
@@ -191,21 +136,5 @@ public class FloatNumber {
 
 
 
-        /*boolean sumSign=true;
-        long sumMantissa=mantissa + num.mantissa;
-        if (!sign&!num.sign){
-            sumSign = false;
-        }
-        if (!sign&num.sign){
-            if(Math.abs(mantissa)>(Math.abs(num.mantissa))){
-                sumSign=false;
-            sumMantissa=mantissa-num.mantissa;}
-            else {sumMantissa=num.mantissa-mantissa;}
-        }if (sign&!num.sign){
-            if(Math.abs(mantissa)<(Math.abs(num.mantissa))){
-                sumSign=false;
-                sumMantissa=num.mantissa-mantissa;}
-            else {sumMantissa=mantissa-num.mantissa;}
-        }
-        int sumExp=exp + num.exp;*/
+
 
