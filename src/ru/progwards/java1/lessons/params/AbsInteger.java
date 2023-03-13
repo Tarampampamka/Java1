@@ -24,10 +24,14 @@ public class AbsInteger {
             ShortInteger res2 = new ShortInteger((short) res.get());
             res=res2;
         }
-        else {
+        if (((res.get()>32767)&&(res.get()<=2147483647))||((res.get()>=-2147483648)&&(res.get()<-32768))){
             IntInteger res3 = new IntInteger(res.get());
             res=res3;
         }
         return res;
+    }
+
+    public static void main(String[] args) {
+        System.out.println(add(new ByteInteger((byte) -7), new ByteInteger((byte) -7)));
     }
 }

@@ -14,7 +14,7 @@ public class ByteInteger extends AbsInteger{
     public int get() {
         return someNum;
     }
-    /*public static void main(String[] args) {
+    public static void main(String[] args) {
         AbsInteger a=new ByteInteger((byte) 120);
         AbsInteger s=new ShortInteger((short) 32767);
         AbsInteger pl=add(a,s);
@@ -24,5 +24,5 @@ public class ByteInteger extends AbsInteger{
         System.out.println(pl instanceof IntInteger);
         int w = a.get();
         System.out.println(pl);
-    }*/
+    }
 }
