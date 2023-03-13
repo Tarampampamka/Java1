@@ -12,8 +12,12 @@ public class ArrayInteger {
     void fromString(String value) {
         String[] strArr = value.split("");
         digits = new byte[strArr.length];
-        for (int i = 0; i < strArr.length; i++) {
-            digits[i] = Byte.parseByte(strArr[i]);
+        try {
+            for (int i = 0; i < strArr.length; i++) {
+                digits[i] = Byte.parseByte(strArr[i]);
+            }
+        }catch(Exception ex){
+
         }
     }
     @Override
@@ -53,7 +57,7 @@ public class ArrayInteger {
 
     public static void main(String[] args) {
         ArrayInteger w =new ArrayInteger(3);
-        w.fromString("9");
+        w.fromString("[9,");
         ArrayInteger q =new ArrayInteger(2);
         q.fromString("12");
         System.out.println(w.add(q));
