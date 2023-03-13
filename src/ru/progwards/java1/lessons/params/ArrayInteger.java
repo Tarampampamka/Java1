@@ -53,7 +53,7 @@ public class ArrayInteger {
 
     public static void main(String[] args) {
         ArrayInteger w =new ArrayInteger(3);
-        w.fromString("[9,");
+        w.fromString("9");
         ArrayInteger q =new ArrayInteger(2);
         q.fromString("12");
         System.out.println(w.add(q));
