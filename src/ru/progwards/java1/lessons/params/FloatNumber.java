@@ -125,18 +125,18 @@ public class FloatNumber {
     }
     public static void main(String[] args) {
         FloatNumber t = new FloatNumber("32114E2");
-        //FloatNumber q = new FloatNumber(true, 337509, 3);
-        //q.negative();
-        //FloatNumber o = new FloatNumber(true, 352450, 3);
-        //System.out.println(o.toDouble());
-        //System.out.println(q.toString());
+        FloatNumber q = new FloatNumber(true, 337509, 3);
+        q.negative();
+        FloatNumber o = new FloatNumber(true, 352450, 3);
+        System.out.println(o.toDouble());
+        System.out.println(q.toString());
         System.out.println(t.toString());
-        //FloatNumber a =new FloatNumber(true, 415743, 3);
-        //FloatNumber e = a.add(new FloatNumber(true, 908398, 3));
-        //System.out.println(e.toString());
-        //FloatNumber p = new FloatNumber(true, 71528, 2);
-        //FloatNumber j = p.sub(new FloatNumber(true, 653528, 3));
-        //System.out.println(j);
+        FloatNumber a =new FloatNumber(true, 415743, 3);
+        FloatNumber e = a.add(new FloatNumber(true, 908398, 3));
+        System.out.println(e.toString());
+        FloatNumber p = new FloatNumber(true, 71528, 2);
+        FloatNumber j = p.sub(new FloatNumber(true, 653528, 3));
+        System.out.println(j);
     }
 }
 
