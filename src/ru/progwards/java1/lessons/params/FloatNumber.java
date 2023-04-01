@@ -25,7 +25,9 @@ public class FloatNumber {
                         continue;
                     } else {
                         tempStr1 += result[i];
-                        tail = i - point;
+                        if (point != 0) {
+                            tail = i - point;
+                        }
                     }
                 } else {
                     j = i;
@@ -53,7 +55,9 @@ public class FloatNumber {
                         continue;
                     } else {
                         tempStr1 += result[i];
-                        tail = i - point;
+                        if (point!=0) {
+                            tail = i - point;
+                        }
                     }
                 } else {
                     j = i;
