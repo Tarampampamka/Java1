@@ -123,26 +123,28 @@ public class FloatNumber {
     }
     FloatNumber add(FloatNumber num){
         double a =toDouble()+num.toDouble();
-        String str= String.valueOf(a);
-        return new FloatNumber(str);
+        String temp = String.format("%.3f",a);
+        String result = temp.replace(',','.');
+        return new FloatNumber(result);
     }
     FloatNumber sub(FloatNumber num){
         num.negative();
         return add(num);
     }
     public static void main(String[] args) {
-        FloatNumber t = new FloatNumber(true, 226540, 3);
-        //FloatNumber q = new FloatNumber(true, 337509, 3);
-        //q.negative();
-        //FloatNumber o = new FloatNumber(true, 352450, 3);
-        //System.out.println(o.toDouble());
-        //System.out.println(q.toString());
+        FloatNumber t = new FloatNumber("2.9458817835E8");
+        FloatNumber q = new FloatNumber(true, 131855750, 3);
+        q.negative();
+        t.fromDouble(2.9458817835E8);
+        FloatNumber o = new FloatNumber(true, 352450, 3);
+        System.out.println(o.toDouble());
+        System.out.println(q.toString());
         System.out.println(t.toString());
-        FloatNumber a =new FloatNumber(true, 415743, 3);
-        FloatNumber e = a.add(new FloatNumber(true, 908398, 3));
+        FloatNumber a =new FloatNumber(true, 58038, 2);
+        FloatNumber e = a.add(new FloatNumber(true, 757913, 3));
         System.out.println(e.toString());
-        FloatNumber p = new FloatNumber(true, 71528, 2);
-        FloatNumber j = p.sub(new FloatNumber(true, 653528, 3));
+        FloatNumber p = new FloatNumber(true, 14367, 3);
+        FloatNumber j = p.sub(new FloatNumber(true, 122776, 3));
         System.out.println(j);
     }
 }
