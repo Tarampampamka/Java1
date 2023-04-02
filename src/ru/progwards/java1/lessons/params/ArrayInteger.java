@@ -1,4 +1,5 @@
 package ru.progwards.java1.lessons.params;
+import java.nio.charset.StandardCharsets;
 import java.util.Arrays;
 public class ArrayInteger {
     byte[] digits;
@@ -10,7 +11,7 @@ public class ArrayInteger {
     }
     //установить свое значение, взяв его из value (уложить числовое значение value во внутренний массив)
     void fromString(String value) {
-        String[] strArr = value.split("");
+        /*String[] strArr = value.split("");
         digits = new byte[strArr.length];
         try {
             for (int i = 0; i < strArr.length; i++) {
@@ -18,6 +19,13 @@ public class ArrayInteger {
             }
         }catch(Exception ex){
 
+        }*/
+        byte[] temp = value.getBytes(StandardCharsets.UTF_8);
+        if (digits.length < temp.length)
+            return;
+
+        for (int i = 0; i < temp.length; i++) {
+            digits[i] = (byte) (temp[temp.length - 1 - i] - 48);
         }
     }
     @Override
@@ -57,7 +65,7 @@ public class ArrayInteger {
 
     public static void main(String[] args) {
         ArrayInteger w =new ArrayInteger(3);
-        w.fromString("[1, 3,");
+        w.fromString("[1, 7,");
         ArrayInteger q =new ArrayInteger(2);
         q.fromString("12");
         System.out.println(w.add(q));
